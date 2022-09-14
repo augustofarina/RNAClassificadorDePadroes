@@ -11,8 +11,6 @@ data = load_iris()
 features =data.data
 target = data.target
 
-neuronios = 50
-
 plt.figure(figsize=(16,8))
 plt.subplot(2,2,1)
 plt.scatter(features[:,0], features[:,1], c=target,marker='o',cmap='viridis')
@@ -38,7 +36,7 @@ plt.subplot(2,2,2)
 plt.scatter(pca_features[:,0], pca_features[:,1], c=target,marker='o',cmap='viridis')
 
 
-ClassificadorPCA = MLPClassifier(hidden_layer_sizes = (50,30,20), alpha=1, max_iter=10000)
+ClassificadorPCA = MLPClassifier(hidden_layer_sizes = (100,80,60,40,20), alpha=1, max_iter=10000)
 ClassificadorPCA.fit(pca_features,target)
 
 
